@@ -1,0 +1,15 @@
+* {
+  font-size: 62.5%;
+  --bg: #241d3b;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  height: 100vh;
+
+  background-color: var(--bg);
+
+  font-size: 1.6rem;
+}
