@@ -1,6 +1,10 @@
 * {
+  font-family: "Poppins", sans-serif;
   font-size: 62.5%;
+
   --bg: #241d3b;
+
+  --heading: 700 2.4rem "Poppins", sans-serif;
 }
 
 body {
