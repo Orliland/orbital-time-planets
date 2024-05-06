@@ -1,4 +1,6 @@
 const counter = document.querySelector(".counter__span");
+const btnActive = document.querySelector(".button--active");
+const btnInactive = document.querySelector(".button--alert");
 
 const mercurio = document.querySelector(".mercurio");
 const venus = document.querySelector(".venus");
@@ -35,7 +37,9 @@ function showOrbits() {
 }
 
 let dia = 0;
-setInterval(function () {
+let interval;
+
+function estudioOrbitas() {
   counter.textContent = dia;
   orbits.mercurio = Math.floor(dia / 88);
   orbits.venus = Math.floor(dia / 225);
@@ -48,4 +52,16 @@ setInterval(function () {
   orbits.pluton = Math.floor(dia / 90411);
   showOrbits();
   dia += 1;
-}, 10);
+}
+
+btnActive.addEventListener("click", function () {
+  btnActive.style.display = "none";
+  btnInactive.style.display = "inline-block";
+  interval = setInterval(estudioOrbitas, 30);
+});
+
+btnInactive.addEventListener("click", function () {
+  btnInactive.style.display = "none";
+  btnActive.style.display = "inline-block";
+  clearInterval(interval);
+});
